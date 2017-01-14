@@ -1,5 +1,8 @@
 class AyudaController < ApplicationController
+  layout 'administracion', except: [:editar]
+
   def index
+  	#render layout: 'administracion'
   end
 
   def pagina
@@ -7,5 +10,6 @@ class AyudaController < ApplicationController
   end
 
   def editar
+  	render layout: false
   end
 end
