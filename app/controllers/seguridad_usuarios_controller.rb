@@ -26,6 +26,7 @@ class SeguridadUsuariosController < ApplicationController
   # POST /seguridad_usuarios
   # POST /seguridad_usuarios.json
   def create
+
     @seguridad_usuario = SeguridadUsuario.new(seguridad_usuario_params)
 
     respond_to do |format|

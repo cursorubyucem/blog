@@ -1,5 +1,11 @@
 source 'https://rubygems.org'
 
+# Client Side Validations made easy for Ruby on Rails
+gem 'client_side_validations'
+
+# An ActiveModel extension that automatically strips all attributes of leading 
+gem "strip_attributes"
+
 gem 'bootstrap-sass'
 
 #gem 'sqlite3'
@@ -47,5 +53,7 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  gem 'rubocop'
 end
 
