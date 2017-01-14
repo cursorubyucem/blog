@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :seguridad_usuarios
   get 'practica_variables/index'
 
   get 'practica_ruby/index'
