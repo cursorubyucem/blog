@@ -8,6 +8,19 @@
 </head>
 <body>
 <p>Application layouts</p>
+<!--
+<%= link_to 'Inicio', controller: 'home', action: 'index' %>
+<%= link_to 'Ayuda', controller: 'ayuda', action: 'index' %>
+-->
+
+<!--
+<%= link_to 'Inicio', home_index_url %>
+<%= link_to 'Ayuda', ayuda_index_path %>
+-->
+
+<%= link_to_unless_current 'INICIO', home_index_url %>
+<%= link_to_unless_current 'AYUDA', ayuda_index_path %>
+
 
 <%= yield %>
 
