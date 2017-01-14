@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   
+  get 'practica_variables/index'
+
+  get 'practica_ruby/index'
+
   get 'ayuda/index'
   get 'ayuda/editar'
   get 'ayuda/pagina/:id' => 'ayuda#pagina'

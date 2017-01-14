@@ -1,0 +1,101 @@
+<h1>PracticaRuby#index</h1>
+<p>Find me in app/views/practica_ruby/index.html.erb
+</p>
+
+<h1>Condicionales</h1>
+
+
+<h2>Case</h2>
+
+<% opcion = 2 %>
+
+<% case opcion %>
+<% when 1%>
+<p>Servicio al cliente</p>
+<% when 2 %>
+<p>Ventas</p>
+<% when 3 %>
+<p>Reclamos</p>
+<% end %>
+
+
+
+
+<% es_administrador = true %>
+
+
+<p>
+<%= 'Soy usuario común ' unless es_administrador == false  %>
+</p>
+
+<p>
+<%= 'Soy adminstrador ' if es_administrador %>
+</p>
+
+<p>
+<% unless es_administrador %>	
+	<%= 'Tengo super poderes :D' %>
+<% else %>
+	<%= 'Soy un usuario común :('%>	
+<% end %>
+</p>
+
+
+<p>
+<% if !es_administrador %>	
+	<%= 'Tengo super poderes :D' %>
+<% else %>
+	<%= 'Soy un usuario común :('%>	
+<% end %>
+</p>
+
+
+
+<p>
+<% if es_administrador %>
+	<%= 'Tengo super poderes :D' %>
+<% else %>
+	<%= 'Soy un usuario común :('%>
+<% end %>
+</p>
+
+
+<p>
+<% if es_administrador == true %>
+	<%= 'Tengo super poderes :D' %>
+<% else %>
+	<%= 'Soy un usuario común :('%>
+<% end %>
+</p>
+
+
+
+<h1>Código ruby en plantillas</h1>
+<p>
+<%= Date.today %>
+</p>
+
+<p>
+<%= Time.now %>
+</p>
+
+<p>
+<% t = Time.now %>
+
+Año: <%= t.year %>, Mes: <%= t.mon %>, Día: <%= t.day %>
+
+</p>
+
+
+
+<p>suma de texto: <%= 'Hola ' + 'Mundo' %></p>
+
+<p>suma: <%= 3 + 2 %></p>
+
+<% for i in 1..5 %>
+<p>Hola Mundo</p>
+<% end %>
+
+<% for i in 1..5 %>
+<p>Hola Mundo: <%= i %> </p>
+<% end %>
