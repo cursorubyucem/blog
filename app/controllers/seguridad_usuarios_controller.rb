@@ -1,4 +1,6 @@
 class SeguridadUsuariosController < ApplicationController
+  layout 'administracion'
+
   before_action :set_seguridad_usuario, only: [:show, :edit, :update, :destroy]
 
   # GET /seguridad_usuarios
