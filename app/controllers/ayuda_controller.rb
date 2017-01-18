@@ -1,5 +1,6 @@
 class AyudaController < ApplicationController
-  layout 'administracion', except: [:editar]
+  #layout 'administracion', except: [:editar]
+  layout 'application'
 
   def index
   	#render layout: 'administracion'

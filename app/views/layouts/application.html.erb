@@ -7,24 +7,63 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<p>Application layouts</p>
 <!--
 <%= link_to 'Inicio', controller: 'home', action: 'index' %>
 <%= link_to 'Ayuda', controller: 'ayuda', action: 'index' %>
 -->
-
 <!--
 <%= link_to 'Inicio', home_index_url %>
 <%= link_to 'Ayuda', ayuda_index_path %>
 -->
+<div class="blog-masthead">
+      <div class="container">
+        <nav class="blog-nav">
+          <%= link_to 'Inicio', home_index_url, { class: 'blog-nav-item' } %>
+          <%= link_to 'Ayuda', ayuda_index_path, { class: 'blog-nav-item' } %>
+        </nav>
+      </div>
+    </div>
 
-<%= link_to_unless_current 'INICIO', home_index_url %>
-<%= link_to_unless_current 'AYUDA', ayuda_index_path %>
+    <div class="container">
 
-<%= link_to_unless_current 'Render', practica_render_index_path %>
+      <div class="blog-header">
+        <h1 class="blog-title">Blog de Ruby on Rails</h1>
+        <p class="lead blog-description">El maravilloso mundo del desarrollo con Ruby on Rails.</p>
+      </div>
 
+      <div class="row">
 
-<%= yield %>
+        <div class="col-sm-8 blog-main">
+        <%= yield %>
+
+        </div><!-- /.blog-main -->
+
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          <div class="sidebar-module sidebar-module-inset">
+            <h4>Acerca</h4>
+            <p>Aplicación desarrollada con el framework de desarrollo de
+            aplicaciones web Raals</p>
+          </div>
+          <div class="sidebar-module">
+            <h4>Archivo</h4>
+            <ol class="list-unstyled">
+              <li><a href="#">2017</a></li>
+              <li><a href="#">2016</a></li>
+              <li><a href="#">2015</a></li>
+            </ol>
+          </div>
+        </div><!-- /.blog-sidebar -->
+
+      </div><!-- /.row -->
+
+    </div><!-- /.container -->
+
+    <footer class="blog-footer">
+      <p>Blog template built for <a href="http://getbootstrap.com">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+      <p>
+        <a href="#">Back to top</a>
+      </p>
+    </footer>
 
 </body>
 </html>
