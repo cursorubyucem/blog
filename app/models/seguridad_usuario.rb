@@ -18,4 +18,7 @@ validates :apellidos,      presence: { message: 'Requerido'},
 	                     format: {with: /\A[a-z]{0,20}\z/, message: 'Solo letras'} 	                     	                     
 
 
+has_many :entrada
+has_many :comentarios
+
 end

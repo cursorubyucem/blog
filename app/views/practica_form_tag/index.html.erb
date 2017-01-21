@@ -1,0 +1,45 @@
+
+<h1>PracticaFormTag#index</h1>
+<p>Find me in app/views/practica_form_tag/index.html.erb</p>
+
+
+<h2>form_tag</h2>
+
+
+
+<%= button_tag 'Button', type: 'button' %>
+
+
+<p>
+<%= color_field_tag 'color' %>
+</p>
+
+<p>
+
+<%= form_tag '/subir_fichero', multipart: true do %>
+	<%= label_tag 'fichero','Seleccione el fichero'%>
+	<%= file_field_tag 'fichero' %>
+	<%= submit_tag 'Subir fichero '%>
+<% end %>
+
+</p>
+
+
+
+<p>
+<%= form_tag('/entradas', method: :put) do %>	
+<%= hidden_field_tag 'entrada_id'%>
+
+<%= label_tag 'titulo', 'Título de la entrada:' %>
+<%= text_field_tag 'titulo' %>
+<%= password_field_tag 'clave' %>
+
+<p>
+Aquì van los controles de nuestro formulario
+
+</p>
+<% end %>
+
+
+
+</p>

@@ -11,10 +11,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170114202350) do
+ActiveRecord::Schema.define(version: 20170121151131) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "comentarios", force: :cascade do |t|
+    t.integer  "entrada_id",                                        null: false
+    t.date     "fecha",                                             null: false
+    t.time     "hora",                                              null: false
+    t.string   "texto",                limit: 2000,                 null: false
+    t.boolean  "revisado",                          default: false, null: false
+    t.integer  "seguridad_usuario_id",                              null: false
+    t.datetime "created_at",                                        null: false
+    t.datetime "updated_at",                                        null: false
+  end
+
+  create_table "entradas", force: :cascade do |t|
+    t.date     "fecha",                                             null: false
+    t.string   "titulo",               limit: 250,                  null: false
+    t.string   "texto",                limit: 2000,                 null: false
+    t.integer  "visitas",                           default: 0,     null: false
+    t.boolean  "publicado",                         default: false, null: false
+    t.integer  "seguridad_usuario_id",                              null: false
+    t.datetime "created_at",                                        null: false
+    t.datetime "updated_at",                                        null: false
+  end
 
   create_table "seguridad_usuarios", force: :cascade do |t|
     t.string   "username",   limit: 20,                 null: false
@@ -27,4 +49,7 @@ ActiveRecord::Schema.define(version: 20170114202350) do
 
   add_index "seguridad_usuarios", ["username"], name: "index_seguridad_usuarios_on_username", unique: true, using: :btree
 
+  add_foreign_key "comentarios", "entradas"
+  add_foreign_key "comentarios", "seguridad_usuarios"
+  add_foreign_key "entradas", "seguridad_usuarios"
 end
