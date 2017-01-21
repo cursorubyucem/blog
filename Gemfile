@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+gem 'devise'
+
+
 # Track changes to your models' data. Good for auditing or versioning. 
 gem 'paper_trail'
 

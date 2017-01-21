@@ -7,15 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<!--
-<%= link_to 'Inicio', controller: 'home', action: 'index' %>
-<%= link_to 'Ayuda', controller: 'ayuda', action: 'index' %>
--->
-<!--
-<%= link_to 'Inicio', home_index_url %>
-<%= link_to 'Ayuda', ayuda_index_path %>
--->
- <%= render 'layouts/shared/header' %>
+
+<%= render 'layouts/shared/header' %>
+
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+
 
 <% flash.each do |name, msg| %>
   <%= content_tag :div, msg, class: (name=='notice' ? 'alert alert-sucess' : 'alert alert-danger' ) %>

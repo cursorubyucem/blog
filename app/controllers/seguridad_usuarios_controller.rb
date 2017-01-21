@@ -1,4 +1,4 @@
-class SeguridadUsuariosController < ApplicationController
+class SeguridadUsuariosController < PrivateController
   layout 'administracion'
 
   before_action :set_seguridad_usuario, only: [:show, :edit, :update, :destroy]

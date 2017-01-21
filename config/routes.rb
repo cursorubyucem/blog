@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  devise_for :seguridad_usuarios
   get 'practica_controlador/index'
 
   get 'practica_render/index'
