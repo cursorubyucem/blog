@@ -23,7 +23,7 @@ SeguridadUsuario.create(id: 3,
                         username: 'comun',
                         nombres: 'usuario',
                         apellidos: 'comun',
-                        email: 'publicador@gmail.com',
+                        email: 'comun@gmail.com',
                         password: '12345678')
 
 Entrada.create(id: 1,
