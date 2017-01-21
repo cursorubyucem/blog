@@ -16,8 +16,8 @@
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
           <li><%= link_to 'Blog', home_index_url %></li>
-          <li><a href="#">Usuario</a></li>
-          <li><a href="#">Salir</a></li>
+          <li><%= link_to current_seguridad_usuario.username, '/' %></li>
+          <li><%= link_to 'Salir' , destroy_seguridad_usuario_session_url, method: :delete %></li>
         </ul>
       </div>
     </div>

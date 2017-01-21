@@ -3,6 +3,25 @@
     <nav class="blog-nav">
       <%= link_to 'Inicio', home_index_url, { class: 'blog-nav-item' } %>
       <%= link_to 'Ayuda', ayuda_index_path, { class: 'blog-nav-item' } %>
+
+      <ul class="nav navbar-nav navbar-right">
+		<% if seguridad_usuario_signed_in?	%>
+			<li>
+			<%= link_to current_seguridad_usuario.username , 'administracion/index'%>
+			</li>
+			<li>
+			<%= link_to 'Salir', destroy_seguridad_usuario_session_url,        method: :delete %>
+				
+			</li>
+      	<% else %>
+	      	<li>
+	      		<%= link_to 'Iniciar Sesión', new_seguridad_usuario_session_url %>
+	      	</li>
+	      	<li>
+	      		<%= link_to 'Registrarse', new_seguridad_usuario_registration_url %>
+	      	</li>
+      	<% end %>      	
+      </ul>
     </nav>
   </div>
 </div>

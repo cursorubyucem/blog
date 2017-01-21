@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
   
-  devise_for :seguridad_usuarios
-  get 'practica_controlador/index'
+  devise_for :seguridad_usuarios, controllers: { 
+    sessions: 'seguridad_usuario/sessions', 
+    registrations: 'seguridad_usuario/registrations'
+  }
 
+  get 'practica_controlador/index'
   get 'practica_render/index'
   get 'practica_render/index_dos'
 
