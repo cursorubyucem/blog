@@ -1,5 +1,7 @@
 class SeguridadUsuario < ActiveRecord::Base
 	strip_attributes
+	#has_paper_trail only: [:username]
+	has_paper_trail ignore: [:apellidos]
 
 
 

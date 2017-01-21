@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'practica_controlador/index'
+
   get 'practica_render/index'
   get 'practica_render/index_dos'
 

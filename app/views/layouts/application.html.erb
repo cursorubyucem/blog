@@ -15,15 +15,11 @@
 <%= link_to 'Inicio', home_index_url %>
 <%= link_to 'Ayuda', ayuda_index_path %>
 -->
-<div class="blog-masthead">
-      <div class="container">
-        <nav class="blog-nav">
-          <%= link_to 'Inicio', home_index_url, { class: 'blog-nav-item' } %>
-          <%= link_to 'Ayuda', ayuda_index_path, { class: 'blog-nav-item' } %>
-        </nav>
-      </div>
-    </div>
+ <%= render 'layouts/shared/header' %>
 
+<% flash.each do |name, msg| %>
+  <%= content_tag :div, msg, class: (name=='notice' ? 'alert alert-sucess' : 'alert alert-danger' ) %>
+<% end %>
     <div class="container">
 
       <div class="blog-header">
@@ -58,12 +54,7 @@
 
     </div><!-- /.container -->
 
-    <footer class="blog-footer">
-      <p>Blog template built for <a href="http://getbootstrap.com">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-      <p>
-        <a href="#">Back to top</a>
-      </p>
-    </footer>
+    <%= render 'layouts/shared/footer'%>
 
 </body>
 </html>

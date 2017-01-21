@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+# Track changes to your models' data. Good for auditing or versioning. 
+gem 'paper_trail'
+
 # Client Side Validations made easy for Ruby on Rails
 gem 'client_side_validations'
 

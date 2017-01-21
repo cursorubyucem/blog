@@ -17,6 +17,11 @@ class SeguridadUsuariosController < ApplicationController
   # GET /seguridad_usuarios/new
   def new
     @seguridad_usuario = SeguridadUsuario.new
+
+    #params.permit(:id)
+    #params.require[:seguridad_usuarios].permit!
+
+
   end
 
   # GET /seguridad_usuarios/1/edit
