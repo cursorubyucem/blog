@@ -1,8 +1,12 @@
 <div class="blog-masthead">
   <div class="container">
     <nav class="blog-nav">
+
       <%= link_to 'Inicio', home_index_url, { class: 'blog-nav-item' } %>
       <%= link_to 'Ayuda', ayuda_index_path, { class: 'blog-nav-item' } %>
+      <% if seguridad_usuario_signed_in?  %>
+        <%= link_to 'Entradas', entradas_path, { class: 'blog-nav-item' } %>
+      <% end %>
 
       <ul class="nav navbar-nav navbar-right">
 		<% if seguridad_usuario_signed_in?	%>
@@ -11,7 +15,7 @@
 			</li>
 			<li>
 			<%= link_to 'Salir', destroy_seguridad_usuario_session_url,        method: :delete %>
-				
+
 			</li>
       	<% else %>
 	      	<li>
@@ -20,7 +24,7 @@
 	      	<li>
 	      		<%= link_to 'Registrarse', new_seguridad_usuario_registration_url %>
 	      	</li>
-      	<% end %>      	
+      	<% end %>
       </ul>
     </nav>
   </div>

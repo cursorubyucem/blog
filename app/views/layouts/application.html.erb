@@ -10,12 +10,8 @@
 
 <%= render 'layouts/shared/header' %>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
-
-
 <% flash.each do |name, msg| %>
-  <%= content_tag :div, msg, class: (name=='notice' ? 'alert alert-sucess' : 'alert alert-danger' ) %>
+  <%= content_tag :div, msg, class: (name=='notice' ? 'alert alert-success' : 'alert alert-danger' ) %>
 <% end %>
     <div class="container">
 
