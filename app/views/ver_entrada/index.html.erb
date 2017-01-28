@@ -12,6 +12,34 @@
 
 	<br/>
 
+
+
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<strong>Comentar</strong>
+	</div>
+	<div class="panel-body">
+
+<% if seguridad_usuario_signed_in? %>
+		<%= form_tag('/ver_entrada/agregar_comentario', method: :post) do %>
+			<%= hidden_field_tag 'entrada_id', @entrada.id %>
+			<%= text_area_tag 'texto', nil, style: 'width:100%' %>
+			<br/>
+			<%= submit_tag "Guardar" %>
+		<% end %>
+
+<% else %>
+	Debe iniciar sesión para comentar
+<% end %>		
+
+
+	</div>
+</div>
+
+
+
+
+
 	<% @comentarios.each do |c| %>
 
 <div class="panel panel-default">
@@ -25,6 +53,19 @@
 	<div class="panel-body">
 		<%= c.texto %>
 	</div>
+
+<% if c.revisado == false%>
+	<div class="panel-footer">
+
+	<%= form_tag('/ver_entrada/revisar_comentario', method: :post) do %>
+	<%= hidden_field_tag 'comentario_id', c.id %>
+	<%= submit_tag 'Revisar' %>
+	
+	<% end %>		
+	</div>
+<% end %>
+
+
 </div>
 
 

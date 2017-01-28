@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  post 'ver_entrada/revisar_comentario'
+  post 'ver_entrada/agregar_comentario'
   get 'ver_entrada/:id' => 'ver_entrada#index'
 
   devise_for :seguridad_usuarios, controllers: { 
