@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'practica_render/index_dos'
 
   resources :seguridad_usuarios
+  resources :entradas
   get 'practica_variables/index'
 
   get 'practica_ruby/index'
