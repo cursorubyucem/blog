@@ -1,25 +1,16 @@
 <% @entradas.each do |e| %>
 
 <div class="blog-post">
-  <h2 class="blog-post-title"><%= e.titulo %></h2>
+  <h2 class="blog-post-title"><%= e[:titulo] %></h2>
   <p class="blog-post-meta">
-    <%= e.fecha %> por 
-    <a href="#"><%= e.seguridad_usuario.username %></a>
-    Comentarios: <%= e.comentarios.count %>
+    <%= e[:fecha] %> por 
+    <a href="#"><%= e[:username] %></a>
+    Comentarios: <%= e[:cantidad_comentario] %>
   </p>
-  <%= e.texto %>
+  <%= e[:texto][0..250] %>
 
-
-  <br>
-  <p>
-    <% e.comentarios.each do |c| %>
-      <%= c.seguridad_usuario.username %>
-      <p><%= c.texto %></p>
-    <% end %>
-  </p>
-
-
-
+  <br/>
+  <%= link_to 'Leer más....', '/ver_entrada/' + e[:id].to_s %>
 
 </div>
 

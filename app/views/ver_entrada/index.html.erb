@@ -1,0 +1,33 @@
+<div class="blog-post">
+	<h2 class="blog-post-title"><%= @entrada.titulo %></h2>
+	<p class="blog-post-meta">
+		<%= @entrada.fecha %>
+		por
+		<a href="#">
+			<%= @entrada.seguridad_usuario.username %>
+		</a>
+		Comentarios: <%= @comentarios.length %>
+	</p>
+	<%= @entrada.texto %>
+
+	<br/>
+
+	<% @comentarios.each do |c| %>
+
+<div class="panel panel-default">
+	<div class="panel-heading">
+	<strong>
+		<%= c.seguridad_usuario.username %>
+	</strong>		
+	<%= c.fecha %>
+	<%= c.hora.strftime("%H:%M") %>
+	</div>
+	<div class="panel-body">
+		<%= c.texto %>
+	</div>
+</div>
+
+
+	<% end %>
+
+</div>

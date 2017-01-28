@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'ver_entrada/:id' => 'ver_entrada#index'
+
   devise_for :seguridad_usuarios, controllers: { 
     sessions: 'seguridad_usuario/sessions', 
     registrations: 'seguridad_usuario/registrations'

@@ -1,4 +1,4 @@
-class EntradasController < PrivateController
+class EntradasController < ApplicationController
   before_action :set_entrada, only: [:show, :edit, :update, :destroy]
 
   # GET /entradas
